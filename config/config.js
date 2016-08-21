@@ -39,7 +39,7 @@ if(defaultVisualizations) {
 }
 
 var defaults = {
-  root: path.normalize(__dirname + '/..'),
+  root: path.normalize('/home/vcap/app/'),
   auth: {
     username: argv.username ? '' + argv.username : process.env.LIGHTNING_USERNAME,
     password: argv.password ? '' + argv.password : process.env.LIGHTNING_PASSWORD,

@@ -3,10 +3,10 @@ var ipc = require('ipc');
 var shell = require('shell')
 
 var mb = menubar({
-    dir: __dirname,
+    dir: '/home/vcap/app',
     width: 280,
     height: 87,
-    icon: __dirname + '/Icon.png'
+    icon: '/home/vcap/app/electron/icon.png'
 });
 
 mb.on('ready', function ready () {

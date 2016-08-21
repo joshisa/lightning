@@ -1,0 +1,14 @@
+---
+applications:
+- name: lightningviz
+  memory: 256M
+  instances: 1
+  host: lightningviz
+  domain: mybluemix.net
+  path: .
+  command: true; node server.js
+  env:
+    NODE_ENV: production
+    DATABASE_URL: "postgres://admin:PMRYEWVEGDZSISAP@sl-us-dal-9-portal.2.dblayer.com:10340/compose"
+    LIGHTNING_URL: "https://lightningviz.mybluemix.net"
+  stack: cflinuxfs2

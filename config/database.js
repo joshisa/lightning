@@ -49,7 +49,6 @@ module.exports = {
         port: (dbUrl) ? dbUrl.port : 5432,
         'sync': {'force': true},
         'logging': false,
-        native: true,
         ssl: true,
         'dialect': 'postgres'
     }
