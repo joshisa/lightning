@@ -5,6 +5,7 @@
 
 var env = process.env.NODE_ENV || 'development';
 var dbConfig = require('../../config/database')[env];
+var versionConfig = require('../../config/version')[env];
 var models = require('../models');
 var Q = require('q');
 var _ = require('lodash');
@@ -22,6 +23,7 @@ exports.status = function (req, res) {
         models.VisualizationType.findAll(),
     ]).spread(function(vizCount, sessionCount, vizTypes) {
         return res.json({
+            version: versionConfig.version,
             database: dbConfig.dialect,
             visualizations: vizCount,
             sessions: sessionCount,
