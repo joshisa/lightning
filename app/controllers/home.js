@@ -23,7 +23,7 @@ exports.status = function (req, res) {
         models.VisualizationType.findAll(),
     ]).spread(function(vizCount, sessionCount, vizTypes) {
         return res.json({
-            version: versionConfig.version,
+            server_version: versionConfig.version,
             database: dbConfig.dialect,
             visualizations: vizCount,
             sessions: sessionCount,
