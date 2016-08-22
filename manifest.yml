@@ -1,4 +1,10 @@
 ---
+declared-services:
+  lightningdb:
+    label: elephantsql
+    plan: turtle
+
+---
 applications:
 - name: lightningviz
   memory: 2500M
@@ -8,7 +14,6 @@ applications:
   command: true; node server.js
   env:
     NODE_ENV: "production"
-    LIGHTNING_URL: "https://lightningviz.mybluemix.net"
   stack: cflinuxfs2
   services:
   -  lightningdb
