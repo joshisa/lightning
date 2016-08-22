@@ -3,8 +3,16 @@ var url = require('url');
 var config = require('./config');
 
 var dbUrl = null;
-if(process.env.DATABASE_URL) {
-    dbUrl = url.parse(process.env.DATABASE_URL);
+if (process.env.VCAP_SERVICES) {
+  console.log("Bluemix Postgresql Service detected! ");
+  var env = JSON.parse(process.env.VCAP_SERVICES);
+  var credentials = env['elephantsql'][0]['credentials'];
+  dbUrl = url.parse(credentials.uri);
+} else if(process.env.DATABASE_URL) {
+  console.log("We found a custom env var DATABASE_URL!")
+  dbUrl = url.parse(process.env.DATABASE_URL);
+} else {
+  console.log("No dbURL could be located.  Defaulting to sqlite.");
 }
 
 module.exports = {
