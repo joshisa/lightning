@@ -4,7 +4,6 @@ declared-services:
     label: elephantsql
     plan: turtle
 
----
 applications:
 - name: lightningviz
   memory: 2500M
@@ -16,4 +15,4 @@ applications:
     NODE_ENV: "production"
   stack: cflinuxfs2
   services:
-  -  lightningdb
+    - lightningdb
