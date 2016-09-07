@@ -19,7 +19,7 @@ block scripts
             window.lightning.requiredVizTypes.push("#{viz.VisualizationType.name}");
         }
         window._require = window.require;
-        window.require = undefined;
+        //window.require = undefined;
         window._define = window.define;
         window.define = undefined;
     script(src='#{STATIC_URL}js/embed.js')
