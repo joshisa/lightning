@@ -40,7 +40,7 @@ if(defaultVisualizations) {
 
 var defaults = {
   root: path.normalize('/home/vcap/app'),
-  version: '1.2.5 [Aug 22 2016]',
+  version: '1.3.0 [Aug 26 2016]',
   auth: {
     username: argv.username ? '' + argv.username : process.env.LIGHTNING_USERNAME,
     password: argv.password ? '' + argv.password : process.env.LIGHTNING_PASSWORD,
